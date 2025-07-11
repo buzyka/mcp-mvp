@@ -77,6 +77,25 @@ By default, the server listens on port **8080**.
 
 ---
 
+## Running with Docker Compose
+
+Add to your `docker-compose.yml` service `mcp-mvp`
+
+```
+version: "3.8"
+services:
+    mcp-mvp:
+        image: vbuzyka/mcp-mvp
+        ports:
+            - 8089:8089
+        environment:
+            MCP_ACCESS_TOKEN: YOUR_AUTH_TOKEN
+            SHOPWARE_ACCESS_KEY_ID: YOUR_ACCESS_KEY_ID_FROM_SHOPWARE
+            SHOPWARE_SECRET_ACCESS_KEY: YOUR_SECRET_KEY_ID_FROM_SHOPWARE
+            SHOPWARE_PLATFORM_DOMAIN: http://localhost:8000
+
+```
+
 ## Usage Examples
 
 Assume your Shopware API is accessible at `http://localhost:8000`.
